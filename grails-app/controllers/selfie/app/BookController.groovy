@@ -97,8 +97,9 @@ class BookController {
 	
 	@Transactional
 	def upload() {
+        println "params ${params}"
 		def book = new Book(params)
-		if(!book.save()) {
+		if(!book.save(flush:true, failOnError:true)) {
 			println "Error Saving! ${book.errors.allErrors}"
 		}
 		redirect view: "index"
