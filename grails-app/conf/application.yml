@@ -25,6 +25,8 @@ endpoints:
         enabled: true
 
 ---
+multipart:
+    maxFileSize: -1
 grails:
     mime:
         disable:
@@ -76,6 +78,20 @@ grails:
                 scriptlets: html
                 taglib: none
                 staticparts: none
+    plugin:
+        selfie:
+            storage:
+                path: "uploads/:class/:id/:propertyName/"
+                bucket: uploads
+                providerOptions:
+                    provider: 'local'
+                    basePath: 'storage'
+                    baseUrl: 'http://localhost:8080/storage'
+    
+        karman:
+            serveLocalStorage: true
+            serveLocalMapping: 'storage'
+            storagePath: './storage'
 endpoints:
     jmx:
         unique-names: true

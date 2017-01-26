@@ -9,7 +9,7 @@ class Book {
 	
     static constraints = {
 		name blank:false
-		photo contentType: ['jpg','png'], fileSize:1024*1024
+		photo contentType: ['image/jpg','image/png'], fileSize:1024*1024
     }
 	
 	static attachmentOptions = [

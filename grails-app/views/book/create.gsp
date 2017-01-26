@@ -25,18 +25,18 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form action="save">
+            <g:uploadForm name="upload" url="[action:'upload',controller:'book']">
                 <fieldset class="form">
-					<g:uploadForm name="upload" url="[action:'upload',controller:'book']">
+					
 						<g:textField name="name" placeholder="name"/><br/>
 						<input type="file" name="photo" /><br/>
 						<g:submitButton name="update" value="Update" /><br/>
-					</g:uploadForm>
+					
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>
-            </g:form>
+            </g:uploadForm>
         </div>
     </body>
 </html>
